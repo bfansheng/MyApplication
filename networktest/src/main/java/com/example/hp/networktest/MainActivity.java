@@ -16,6 +16,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -88,24 +89,43 @@ public class MainActivity extends ActionBarActivity {
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
                     //发起GET请求
-                    HttpGet httpGet = new HttpGet("http://www.baidu.com");
+                    HttpGet httpGet = new HttpGet("http://www.weather.com.cn/adat/sk/101230101.html");
                     //获取服务器返回信息
                     HttpResponse httpResponse = httpClient.execute(httpGet);
                     if (httpResponse.getStatusLine().getStatusCode() == 200) {
                         //转换为字符串
                         HttpEntity entity = httpResponse.getEntity();
                         String response = EntityUtils.toString(entity, "utf-8");
+                        //Log.i("main", response);
+                        parseJSONWithJSONObject(response);
 
-                        Message message = new Message();
-                        message.what = SHOW_RESPONSE;
-                        message.obj = response.toString();
-                        handler.sendMessage(message);
                     }
-                }catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+    }
+
+    private void parseJSONWithJSONObject(String jsonData) {
+        try {
+            //
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONObject jsonCity = new JSONObject(
+                    jsonObject.getString("weatherinfo"));
+            String city = jsonCity.getString("city");
+            String temp = jsonCity.getString("temp");
+            //发送消息
+            String result = city + ":"+ temp + "℃";
+            Message message = new Message();
+            message.what = SHOW_RESPONSE;
+            message.obj = result;
+            handler.sendMessage(message);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
