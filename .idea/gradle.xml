@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/networktest" />
             <option value="$PROJECT_DIR$/webview" />
+            <option value="$PROJECT_DIR$/xmltest" />
           </set>
         </option>
       </GradleProjectSettings>
