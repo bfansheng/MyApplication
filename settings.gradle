@@ -1,1 +1,1 @@
-include ':app', ':webview', ':networktest', ':xmltest', ':locationtest', ':BaiduMapTest'
+include ':app', ':webview', ':networktest', ':xmltest', ':locationtest', ':BaiduMapTest', ':drawerlayouttest', ':mediatest', ':mediastoretest', ':gsontest', ':volleytest'

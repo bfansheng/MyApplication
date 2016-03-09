@@ -12,8 +12,13 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/BaiduMapTest" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/drawerlayouttest" />
+            <option value="$PROJECT_DIR$/gsontest" />
             <option value="$PROJECT_DIR$/locationtest" />
+            <option value="$PROJECT_DIR$/mediastoretest" />
+            <option value="$PROJECT_DIR$/mediatest" />
             <option value="$PROJECT_DIR$/networktest" />
+            <option value="$PROJECT_DIR$/volleytest" />
             <option value="$PROJECT_DIR$/webview" />
             <option value="$PROJECT_DIR$/xmltest" />
           </set>

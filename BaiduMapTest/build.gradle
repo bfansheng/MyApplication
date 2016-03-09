@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile files('libs/baidumapapi_v3_1_0.jar')
+    compile files('libs/baidumapapi_base_v3_7_1.jar')
 }
